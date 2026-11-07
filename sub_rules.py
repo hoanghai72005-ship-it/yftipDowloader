@@ -1,0 +1,218 @@
+SUBTITLE_HALLUCINATION_PATTERNS = [
+    # Tiếng Việt
+    r"la\s*la\s*school",
+    r"ghiền\s+mì\s+gõ",
+    r"faptv",
+    r"kem\s+xôi\s+tv",
+    r"hãy\s+subscribe\s+cho\s+kênh",
+    r"để\s+không\s+bỏ\s+lỡ\s+những\s+video\s+hấp\s+dẫn",
+    r"cảm\s+ơn\s+các\s+bạn\s+đã\s+(xem|theo\s+dõi|lắng\s+nghe)",
+    r"hãy\s+đăng\s+ký\s+kênh",
+    r"nhấn\s+(chuông|nút)\s+thông\s+báo",
+    r"nhấn\s+like\s+và\s+(share|đăng\s+ký)",
+    r"đừng\s+quên\s+(ấn|nhấn)\s+(like|đăng\s+ký|subscribe)",
+    r"phụ\s+đề\s+được\s+thực\s+hiện\s+bởi",
+    r"người\s+dịch\s*:",
+    r"biên\s+tập\s+phụ\s+đề",
+    r"chúc\s+các\s+bạn\s+xem\s+video\s+vui\s+vẻ",
+    r"hẹn\s+gặp\s+lại\s+các\s+bạn\s+trong\s+những\s+video\s+tiếp\s+theo",
+    r"bản\s+quyền\s+thuộc\s+về",
+    r"t\.?g\.?o'?s.*cool",
+    r"cool\s+cái\s+nép\s+suốt",
+    # Tiếng Anh
+    r"amara\.org",
+    r"subtitles?\s+by\s+the\s+amara",
+    r"translated\s+by\s+the\s+community",
+    r"thank\s+you\s+(so\s+much\s+)?for\s+(watching|listening)",
+    r"thanks\s+for\s+(watching|listening)",
+    r"please\s+subscribe\s+to\s+(my|the|our)\s+channel",
+    r"don't\s+forget\s+(to\s+)?(like|subscribe|hit\s+the\s+bell)",
+    r"hit\s+the\s+(like\s+button|notification\s+bell)",
+    r"leave\s+a\s+comment\s+below",
+    r"see\s+you\s+in\s+the\s+next\s+video",
+    r"captions?\s+by\s+",
+    r"transcription\s+by\s+",
+    r"all\s+rights\s+reserved",
+    r"copyright\s+\d{4}",
+    r"www\.[a-z0-9\-]+\.(com|org|net|vn)",
+]
+
+HALLUCINATION_TAIL_STRIPS = [
+    r"Hãy\s+subscribe\s+cho\s+kênh\s+La\s*La\s*School[^.!?\n]*",
+    r"Để\s+không\s+bỏ\s+lỡ\s+những\s+video\s+hấp\s+dẫn[^.!?\n]*",
+    r"Hãy\s+đăng\s+ký\s+kênh\s+để\s+ủng\s+hộ[^.!?\n]*",
+    r"Cảm\s+ơn\s+các\s+bạn\s+đã\s+theo\s+dõi[^.!?\n]*",
+    r"Thank\s+you\s+for\s+watching[^.!?\n]*",
+    r"Please\s+subscribe\s+to\s+our\s+channel[^.!?\n]*",
+]
+
+
+DANGLING_END_WORDS_VI = {
+    "những", "các", "mỗi", "mọi", "từng", "một", "hai", "ba", "vài", "nhiều", "ít", "bao",
+    "như", "rằng", "là", "và", "hay", "hoặc", "cùng", "với", "của", "cho", "từ", "tại",
+    "ở", "trong", "ngoài", "trên", "dưới", "giữa", "vì", "bởi", "do", "để", "mà", "nếu",
+    "khi", "lúc", "thuở", "buổi", "ngay",
+    "đang", "đã", "sẽ", "vừa", "mới", "sắp", "vẫn", "còn", "cũng", "đều", "chỉ", "toàn",
+    "chẳng", "không", "chưa", "chả", "đừng", "chớ", "hãy", "rất", "quá", "lắm", "hơi",
+    "khá", "cực", "vô", "bất", "hơn", "nhất", "càng", "thật", "sao", "bỗng", "dẫu", "dù",
+    "trái", "vòng", "vầng", "nhành", "cành", "chén", "ly", "dòng", "giọt", "hạt", "cơn",
+    "làn", "tia", "ánh", "bóng", "hình", "nỗi", "niềm", "câu", "lời", "tiếng", "khúc",
+    "bài", "chuyện", "đoạn", "phía", "bên", "cạnh", "trước", "sau", "đôi", "cặp", "tụi",
+    "chúng", "bọn", "giấu", "che", "yếu", "buông", "nắm", "ôm", "vùi", "chôn", "xoa",
+    "dịu", "nhặt", "ngước", "nhìn", "nghe", "thấy", "biết", "hiểu", "nhớ", "thương",
+    "yêu", "ghét", "sợ", "mong", "ước", "chờ", "đợi", "tìm", "kiếm", "mang", "đem",
+    "đưa", "gửi", "trao", "nhận", "xin", "đành", "cố", "viên", "mảnh", "cánh", "phá",
+    "xóa", "trở", "nên", "phải", "nếm", "kìm", "nén", "thức", "giấc", "mặt", "bàn"
+}
+
+DANGLING_END_WORDS_EN = {
+    "a", "an", "the", "this", "that", "these", "those", "my", "your", "his", "her",
+    "its", "our", "their", "some", "any", "no", "every", "each", "either", "neither",
+    "another", "such", "what", "which", "whose",
+    "in", "on", "at", "to", "for", "with", "from", "by", "about", "as", "into",
+    "like", "through", "after", "over", "between", "out", "against", "during",
+    "without", "before", "under", "around", "among", "upon", "within", "toward",
+    "towards", "onto", "off", "of", "than", "until", "till", "since", "despite",
+    "and", "or", "but", "nor", "so", "yet", "because", "although", "though",
+    "while", "if", "unless", "whether", "who", "whom", "where", "when", "why", "how",
+    "i", "you", "he", "she", "we", "they", "am", "is", "are", "was", "were", "be",
+    "been", "being", "have", "has", "had", "having", "do", "does", "did", "will",
+    "would", "shall", "should", "can", "could", "may", "might", "must", "need",
+    "don't", "doesn't", "didn't", "won't", "wouldn't", "can't", "couldn't", "shouldn't",
+    "isn't", "aren't", "wasn't", "weren't", "haven't", "hasn't", "hadn't",
+    "i'm", "you're", "he's", "she's", "it's", "we're", "they're", "i've", "i'll", "i'd",
+    "very", "really", "too", "quite", "rather", "almost", "nearly", "just", "only", "not"
+}
+
+DANGLING_END_WORDS_ALL = DANGLING_END_WORDS_VI | DANGLING_END_WORDS_EN
+
+
+SENTENCE_STARTER_WORDS_VI = {
+    "nhưng", "mà", "rồi", "vậy", "thế", "nên", "vì", "bởi", "dù", "dẫu", "mặc", "nếu", "giá",
+    "ước", "mong", "hứa", "bao", "sao", "ai", "chẳng", "không", "đừng", "hãy", "thôi",
+    "ừ", "ờ", "ồ", "ôi", "trời", "chuyện", "một", "ngày", "đêm", "chiều", "sáng", "tối",
+    "giờ", "bây", "lúc", "khi", "sau", "trước", "trái", "vầng", "bàn", "buông", "bước",
+    "phá", "xóa", "dựng", "ta", "anh", "em", "tôi", "mình", "tụi", "chúng", "họ", "nó",
+    "cô", "chàng", "nàng", "người", "câu", "lời", "nước", "nhấp", "cài", "nhung", "vùi",
+    "thương", "yêu", "đau", "hết", "đủ", "thật", "trong", "cho", "về", "đành", "liệu",
+    "xin", "kể", "chỉ", "tình"
+}
+
+SENTENCE_STARTER_WORDS_EN = {
+    "but", "and", "so", "because", "although", "though", "when", "while", "if", "unless",
+    "since", "until", "after", "before", "now", "then", "here", "there", "where", "why",
+    "how", "what", "who", "maybe", "perhaps", "suddenly", "finally", "however", "therefore",
+    "i", "you", "he", "she", "we", "they", "it", "this", "that", "these", "those", "my",
+    "your", "his", "her", "our", "their", "please", "don't", "never", "always", "sometimes",
+    "every", "once", "today", "tonight", "tomorrow", "yesterday", "are", "is", "do", "can"
+}
+
+SENTENCE_STARTER_WORDS_ALL = SENTENCE_STARTER_WORDS_VI | SENTENCE_STARTER_WORDS_EN
+
+
+SPLIT_COMPOUND_PAIRS_VI = {
+    ("bật", "khóc"), ("trước", "gương"), ("ngày", "xưa"), ("ngày", "giờ"),
+    ("sớm", "mai"), ("thức", "dậy"), ("thức", "giấc"), ("tỉnh", "giấc"),
+    ("dòng", "lệ"), ("giọt", "lệ"), ("hao", "gầy"), ("vòng", "tay"),
+    ("bàn", "tay"), ("yếu", "đuối"), ("viễn", "cảnh"), ("che", "hết"),
+    ("chấm", "hết"), ("giấu", "che"), ("trái", "tim"), ("báo", "động"),
+    ("động", "trời"), ("buông", "tay"), ("nặng", "lời"), ("kỳ", "công"),
+    ("kì", "công"), ("tháng", "ấy"), ("tháng", "ngày"), ("năm", "tháng"),
+    ("vô", "tình"), ("nhặt", "lên"), ("nhặt", "lấy"), ("vầng", "trăng"),
+    ("mặt", "trời"), ("tâm", "trí"), ("tâm", "trạng"), ("lúc", "ấy"),
+    ("đớn", "đau"), ("nỗi", "đau"), ("nhận", "hết"), ("nếm", "trải"),
+    ("nén", "lại"), ("kìm", "nén"), ("khép", "cửa"), ("mũi", "dao"),
+    ("chia", "đôi"), ("chia", "tay"), ("phố", "mưa"), ("mưa", "buồn"),
+    ("nuối", "tiếc"), ("luyến", "tiếc"), ("rời", "xa"), ("dứt", "khoát"),
+    ("dày", "vò"), ("giày", "vò"), ("nồng", "say"), ("mộng", "say"),
+    ("trở", "nên"), ("giấc", "mơ"), ("giấc", "mộng"), ("bên", "em"),
+    ("bên", "anh"), ("bên", "nhau"), ("bên", "tai"), ("sau", "lưng"),
+    ("cạnh", "bên"), ("nhành", "hoa"), ("chén", "rượu"), ("xoa", "dịu"),
+    ("chôn", "vùi"), ("hữu", "ý"), ("hoa", "rơi"), ("khóc", "thay"),
+    ("đoạn", "kết"), ("thật", "lòng"), ("thật", "đấy"), ("nước", "mắt"),
+    ("dựng", "xây"), ("trò", "chuyện"), ("nói", "chuyện"), ("cô", "đơn"),
+    ("lạc", "lõng"), ("chơi", "vơi"), ("bơ", "vơ"), ("hoàng", "hôn"),
+    ("bình", "minh"), ("bóng", "tối"), ("ánh", "sáng"), ("thanh", "xuân"),
+    ("kỷ", "niệm"), ("ký", "ức"), ("hạnh", "phúc"), ("đau", "thương"),
+    ("tổn", "thương"), ("vỡ", "tan"), ("tan", "vỡ"), ("ngọt", "ngào"),
+    ("đắng", "cay"), ("cay", "đắng"), ("mặn", "đắng"), ("vội", "vã"),
+    ("vội", "vàng"), ("lặng", "lẽ"), ("âm", "thầm"), ("dịu", "dàng"),
+    ("ấm", "áp"), ("lạnh", "lùng"), ("lạnh", "lẽo"), ("mệt", "mỏi")
+}
+
+NONSENSE_BIGRAMS_VI = {
+    ("áo", "cày"), ("ngao", "cày"), ("ngào", "cười"), ("xòa", "rượu"),
+    ("xòa", "dịp"), ("chương", "hương"), ("chớn", "gương"), ("trẻ", "bết"),
+    ("che", "bết"), ("bao", "động"), ("bão", "động"), ("động", "chơi"),
+    ("đông", "trời"), ("giấc", "quá"), ("giấc", "khoát"), ("bông", "tay"),
+    ("bốn", "tay"), ("kỳ", "không"), ("kỳ", "cơm"), ("kỳ", "câu"),
+    ("cho", "vụ"), ("vụ", "tặng"), ("hòa", "gió"), ("yêu", "ý"),
+    ("nhật", "lên"), ("nhạc", "lên"), ("vòng", "tràng"), ("vương", "trăng"),
+    ("đáng", "khóc"), ("đáng", "khó"), ("khóc", "tay"), ("khóc", "thấy"),
+    ("lâu", "cách"), ("lâu", "cay"), ("kết", "mối"), ("nên", "chài"),
+    ("nên", "chạy"), ("dối", "tim"), ("nê", "lại"), ("khép", "cơ"),
+    ("khép", "cứa"), ("trang", "mũi"), ("mũi", "rào"), ("thật", "đáy"),
+    ("giải", "giới"), ("chuyên", "mất"), ("chiết", "đôi"), ("liên", "tiếc"),
+    ("lươn", "tiếc"), ("ánh", "tôi"), ("anh", "tôi"), ("càm", "một"),
+    ("chiến", "rượu"), ("nung", "say"), ("núng", "say"), ("ngay", "sớm"),
+    ("ngày", "sớm"), ("viết", "cánh"), ("viên", "cánh"), ("ứa", "em"),
+    ("trái", "cua"), ("cua", "anh"), ("ơ", "kê")
+}
+
+
+CONTEXTUAL_COLLOCATION_FIXES_VI = [
+    (r"\b(cài|cải)\s+nhìn\s+hoa\s+lên\s+tóc\b", "Cài nhành hoa lên tóc"),
+    (r"\bơn\s+càm\s+một\b", "hơn cả một"),
+    (r"\b(bất|vắt)\s+khóc\b", "bật khóc"),
+    (r"\bôm\s+bàn\s+(vui|vùi)\s+mình\s+(chương\s+hương|chớn\s+gương|trớn\s+gương)\b", "ôm mặt vùi mình trước gương"),
+    (r"\blại\s+ôm\s+bàn\b", "lại ôm mặt vùi mình trước gương"),
+    (r"\b(vui|vùi)\s+mình\s+(chương\s+hương|chớn\s+gương|trớn\s+gương)\b", "vùi mình trước gương"),
+    (r"\b(nhưng|những)\s+nhớ\s+quên\s+(em|hết),?\s*(ngay|ngày)\s+(sớm|xưa|giờ)\b", "Nhung nhớ quên hết ngày giờ"),
+    (r"\bquên\s+(em|hết),?\s*(ngay|ngày)\s+sớm\b", "quên hết ngày giờ"),
+    (r"\bchưa\s+đến\s+(dậy\s+vòng|dầy\s+vò|dày\s+vò)\b", "trở nên dày vò"),
+    (r"\bdậy\s+vòng\b", "dày vò"),
+    (r"\b(nhấp|nhắp)\s+chiến\s+rượu\s+(nung|núng|nồng)\s+say\b", "Nhấp chén rượu nồng say"),
+    (r"\brượu\s+(nung|núng)\s+say\b", "rượu nồng say"),
+    (r"\b(dòng\s+)?(giọng|dòng)\s+mẹ\s+cay\b", "dòng lệ cay"),
+    (r"\bcho\s+quên\s+đi\s+những\s+(ngao\s+cày|áo\s+cày|ngào\s+cười|ngọt)\b", "cho quên đi những hao gầy"),
+    (r"\bnhững\s+(ngao\s+cày|áo\s+cày|ngào\s+cười)\b", "những hao gầy"),
+    (r"\bứa\s+em\s+ở\s+đây\b", "Ước em ở đây"),
+    (r"\b(xòa\s+rượu|xòa\s+dịp|xóa\s+dịp)\s+anh\b", "xoa dịu anh"),
+    (r"\bkhi\s+(yêu|yếu)\s+đôi\b", "khi yếu đuối"),
+    (r"\bmột\s+(viên|viết)\s+cánh\s+như\s+(vậy|vầy|gây)\s*(cả|ca)?\b", "Một viễn cảnh như vậy cả"),
+    (r"\bgiấu\s+(trẻ|che)\s+(bết|mết|hết)\s+rồi\b", "đặt dấu chấm hết thôi"),
+    (r"\b(nhiều\s+lâu|bao\s+nhiêu\s+lâu)\s+ta\s+bên\s+nhau\s+(ra|giờ)\s+đây\s+(qua|quá)\s+(được|đông|đủ)\s+rồi\b", "Bao nhiêu lâu ta bên nhau giờ đây quá đủ rồi"),
+    (r"\b(trai\s+em\s+thì|trái\s+tim)\s+cũng\s+đã\s+(bao\s+động|bão\s+động|bao\s+đông|báo\s+đông|báo\s+quá\s+đủ)\s+rồi\b", "Trái tim cũng đã báo động rồi"),
+    (r"\bđã\s+(bao\s+động|bão\s+động|bao\s+đông|báo\s+đông)\s+rồi\b", "đã báo động rồi"),
+    (r"\banh\s+(nghe|em)\s+(mà|một|mong|ôm|hồn)\s+(tin|tịt)\s+quá\s+(đông|động)\s+(trời|trôi|chơi)\b", "Anh nghe một tin quá động trời"),
+    (r"\bquá\s+(đông|động)\s+(trôi|chơi)\b", "quá động trời"),
+    (r"\b(bốn|bông|bước|bỗng)\s+tay\s+(giấc\s+quá|giấc\s+khoát|dứt\s+khoát|dành\s+qua|dần\s+qua|rớt\s+qua)\s+chỉ\s+(về|vì)\s+(câu\s+em\s+ơi|câu\s+nàn\s+lời|cố\s+nặng\s+lời|câu\s+nặng\s+lời|câu\s+đang\s+lỡ)\b", "Buông tay dứt khoát chỉ vì câu nặng lời"),
+    (r"\b(bốn|bông|bỗng)\s+tay\s+(giấc\s+quá|giấc\s+khoát|dứt\s+khoát)\b", "Buông tay dứt khoát"),
+    (r"\bchỉ\s+(về|vì)\s+(câu\s+em\s+ơi|câu\s+nàn\s+lời|cố\s+nặng\s+lời|câu\s+đang\s+lỡ)\b", "chỉ vì câu nặng lời"),
+    (r"\bnhững\s+(đại|đầy|này|điều|đời)\s+(kỳ|kì)\s+(không|công|câu|cơm)\b", "những đại kì công"),
+    (r"\b(giá\s+đeo\s+những\s+ngơi|giá\s+đi\s+âu\s+đừng|giá\s+điêu\s+này\s+ngỡ|giá\s+điêu\s+nên\s+ngỡ|giỡn\s+yêu\s+nhưng\s+ngỡ|xóa\s+đi\s+những|dựng\s+xây\s+nhưng)\s+(đại|ở)?\s*lại\s+thì\s+không(\s+nơi|\s+này)?\b", "Rất yêu nhưng ở lại thì không"),
+    (r"\bta\s+cứ\s+(cho\s+vụ|cho\s+vượt|trôi\s+vượt|chờ\s+vừa|cho\s+vô|trông\s+vui)\s+(tặng|vào|thật|tất)\s+cả\s+năm\s+tháng\s+(ấy|ngày)\b", "Ta cứ chôn vùi tất cả năm tháng ấy"),
+    (r"\b(vậy\s+là|ngày\s+nào)\s+(hoa\s+rồi|hoa\s+rơi|hòa\s+gió|bao\s+giờ)\s+(yêu\s+ý|hữu\s+ý)(\s+ai|\s+anh)?\b", "Vậy là hoa rơi hữu ý"),
+    (r"\b(còn\s+còn\s+còn|gái\s+em|hai\s+em|còn\s+em|như)\s*(chỉ|chi)?\s*vô\s+tình\s*(nhật\s+lên|nhặt\s+lên|nhạc\s+lên|nhận\s+lên|hẹp\s+lên|nhặt\s+lấy)?\b", "hay em chỉ vô tình nhặt lên"),
+    (r"\b(vâng\s+chẳng|vương\s+trăng|vòng\s+chàng|vòng\s+tràng|vương\s+chẳng|vầng\s+trăng)\s+(đang|đáng|đàm|đã)\s+(khóc|khó)\s+(thấy|tay|thay)\s*(chờ\s+tâm|chờ\s+ta|cho\s+ta|chờ\s+tan|cho)?\b", "Vầng trăng đang khóc thay cho"),
+    (r"\b(cho\s+ta\s+)?(ta\s+trái|âm\s+trang|tâm\s+chẳng|em\s+chẳng|chẳng|chân|em\s+sẽ|trong\s+cua)\s+(của|cua)\s+(anh|ảnh)\s+ngay\s+(lúc|lâu|lối)\s*(ấy|cách|cay)?\b", "tâm trạng của anh ngay lúc ấy"),
+    (r"\b(nhận|nhẹ|nhật|nhạt|vì|hết)\s+đớn\s+đau\s+anh\s+xin\s+nhận\s+(hết|nét|em)\b", "Vậy đớn đau anh xin nhận hết"),
+    (r"\bvề\s+(mình\s+)?(ánh|anh)\s+tôi\b", "về anh thôi"),
+    (r"\bchuyện\s+đúng\s+rồi\b", "chuyện đủ rồi"),
+    (r"\bmột\s+đoạn\s+kết\s+mối\b", "Một đoạn kết mới"),
+    (r"\b(sao|sau)\s+những\s+(nó\s+đâu|nỗi\s+đau)\s+phải\s+(nên\s+chài|nên\s+trải|nên\s+chạy|nếm\s+trải)\b", "Sau những nỗi đau phải nếm trải"),
+    (r"\bnước\s+mắt\s+(dối\s+tim\s+nê|rồi\s+tìm\s+nên|rơi\s+kìm\s+nén)\s+lại\b", "Nước mắt rơi tự nén lại"),
+    (r"\bđành\s+khép\s+(cơ\s*ơ|cứa|cửa)\b", "đành khép cửa"),
+    (r"\bchẳng\s+(mơ|mở)\s+(thế\s+mai|thêm\s+ai)\b", "chẳng mở thêm ai"),
+    (r"\bcâu\s+(chuyện\s+thời|chuyện\s+tai|chuyện\s+tay|chia\s+tay)\s*(ta|em|ra)?\s*(buồn|buông)?\s*(như\s+(trang|trăm|trăng)\s+mũi\s+(dao|rào))?\b", "Câu chia tay ra buông như trăm mũi dao"),
+    (r"\b(đau|oh|ôi)\s+thật\s+đáy\b", "Đau thật đấy"),
+    (r"\b(ai|anh)\s+nói\s+chuyện\s+(phải|với)\s+(nói|nỗi)\s+đau\b", "Anh trò chuyện với nỗi đau"),
+    (r"\b(vầng\s+trăng\s+biết\s+rơi|anh\s+đã\s+biết\s+rằng|anh\s+đã\s+biết\s+giải\s+giới)\s+(rất\s+)?đau(\s+ơ\s+kê|\s+ok)?\b", "Anh đã biết sẽ rất đau, okay"),
+    (r"\bkhông\s+thể\s+(chuyên|trôi)\s+mất\s+nhau\s+sau\s+này\b", "không thể tin chuyện mất nhau sau này"),
+    (r"\bngày\s+ta\s+chiết\s+đôi\b", "Ngày ta chia đôi"),
+    (r"\b(liên|lươn|luyến|nuối)\s+tiếc\s+(mây|mấy)(\s+tí)?\s+thì\s+cũng\s+phải\s+(rơi|rời)\s+xa\b", "luyến tiếc mấy thì cũng phải rời xa"),
+    (r"\bquá\s+đủ\s+rồi\s+oh\s+ai\b", "Quá đủ rồi, quá đủ rồi"),
+    (r"\bthức\s+giữ\b", "thức giấc"),
+    (r"\b(kế|kề)\s+bên\s+tay\b", "khẽ bên tai"),
+    (r"\btình\s+giấc(\s+lạnh\s+mơ)?\b", "tỉnh giấc lại mơ"),
+]
