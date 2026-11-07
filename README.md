@@ -17,13 +17,13 @@
 
 | Đường dẫn file / thư mục | Mô tả vai trò trong hệ thống |
 | :--- | :--- |
-| [`main.py`](https://drive.google.com/file/d/1suGwO3SxKMKraF2L12w__B_ZJ4lWdvTt/view?usp=drivesdk) | Điểm khởi chạy chính (`MainApp`), quản lý luồng tải đa nền tảng (`QThread`), điều khiển trình phát MPV và logic Playlist |
-| [`gui.py`](https://drive.google.com/file/d/1dZCjFqdBiMYn94hHd9RcRPrwsERX33s9/view?usp=drivesdk) | Giao diện người dùng `ModernUI` ([PyQt6](https://pypi.org/project/PyQt6/)), định nghĩa 6 tab chức năng, thanh trượt `JumpSlider` và hộp thoại chọn tỷ lệ khung hình |
-| [`ai_sub.py`](https://drive.google.com/file/d/1uA5L3fUs6dytklsKEDIuIyIphtzrknx-/view?usp=drivesdk) | Engine nhận diện giọng nói AI ([Faster-Whisper](https://github.com/SYSTRAN/faster-whisper) / [OpenAI Whisper](https://github.com/openai/whisper)), tách nhạc [Demucs](https://github.com/facebookresearch/demucs) / DSP và căn chỉnh phụ đề `.srt` |
-| [`sub_rules.py`](https://drive.google.com/file/d/1xrEY97mU6nfoKe8HHv6aPc2CJLNk67Hx/view?usp=drivesdk) | Từ điển quy tắc lọc câu rác (hallucination), từ nối bị treo cuối câu và bộ sửa lỗi cụm từ đồng âm tiếng Việt |
-| [`mpv-1.dll`](https://drive.google.com/file/d/1Xk12hjZIk9rVG_Rebqw8IwOTUJYouOdC/view?usp=drivesdk) | Thư viện liên kết động `libmpv` cho Windows để nhúng trình phát video/audio trực tiếp vào giao diện |
-| [`bin/`](https://drive.google.com/drive/folders/12PBl8D62HrzQYowl8rSNth7Yy-VHAfBq) | Chứa bộ công cụ [`ffmpeg.exe`](https://drive.google.com/file/d/1bzbQu41FoYDBY_vep6ykd1tBXEd4MGca/view?usp=drivesdk), [`ffplay.exe`](https://drive.google.com/file/d/1di5L_6nLjhtqmZc2ekQYxZ6ed4LvXSpS/view?usp=drivesdk) và [`ffprobe.exe`](https://drive.google.com/file/d/1JHBxCaUwBOCJoRpzCC2lP5FA2PE7d7sd/view?usp=drivesdk) dùng để cắt, gộp, chuyển đổi định dạng và lọc âm thanh |
-| [ic/](https://www.google.com/search?q=https://drive.google.com/drive/folders/1aMFYjofppaIJTYdvmJ9II4ZtS8cudOP7) | Chứa icon ứng dụng ([`logo.ico`](https://drive.google.com/file/d/1pZDfeND-5UZfoARbKpvFQthsJLGcD-tW/view?usp=drivesdk)) và biểu tượng các nền tảng ([`youtube.png`](https://drive.google.com/file/d/1NK73w1AX4r_2P9LNoTn-3-n8GGIH2anE/view?usp=drivesdk), [`facebook.png`](https://drive.google.com/file/d/1zqXliU5S9zLVGewpdZvXPYFWTI-1HlQP/view?usp=drivesdk), [`tik-tok.png`](https://drive.google.com/file/d/1TMG_qLhARzB2Zc9tUdBLNdSYaCTuzBn8/view?usp=drivesdk), [`instagram.png`](https://drive.google.com/file/d/1FsoJSHAkZ2z9vH3O0fzuRNjCid_5VWIe/view?usp=drivesdk), [`pinterest.png`](https://drive.google.com/file/d/1IZ_DCW4y7l-e8uDbo5EF9FFMK8UOnC_U/view?usp=drivesdk)) |
+| [`main.py`](https://github.com/hoanghai72005-ship-it/yftipDowloader/blob/main/main.py) | Điểm khởi chạy chính (`MainApp`), quản lý luồng tải đa nền tảng (`QThread`), điều khiển trình phát MPV và logic Playlist |
+| [`gui.py`](https://github.com/hoanghai72005-ship-it/yftipDowloader/blob/main/gui.py) | Giao diện người dùng `ModernUI` ([PyQt6](https://pypi.org/project/PyQt6/)), định nghĩa 6 tab chức năng, thanh trượt `JumpSlider` và hộp thoại chọn tỷ lệ khung hình |
+| [`ai_sub.py`](https://github.com/hoanghai72005-ship-it/yftipDowloader/blob/main/ai_sub.py) | Engine nhận diện giọng nói AI ([Faster-Whisper](https://github.com/SYSTRAN/faster-whisper) / [OpenAI Whisper](https://github.com/openai/whisper)), tách nhạc [Demucs](https://github.com/facebookresearch/demucs) / DSP và căn chỉnh phụ đề `.srt` |
+| [`sub_rules.py`](https://github.com/hoanghai72005-ship-it/yftipDowloader/blob/main/sub_rules.py) | Từ điển quy tắc lọc câu rác (hallucination), từ nối bị treo cuối câu và bộ sửa lỗi cụm từ đồng âm tiếng Việt |
+| mpv-1.dll | Thư viện liên kết động `libmpv` cho Windows để nhúng trình phát video/audio trực tiếp vào giao diện |
+| [`bin/`](https://github.com/hoanghai72005-ship-it/yftipDowloader/tree/main/bin) | Chứa bộ công cụ ffmpeg.exe, ffplay.exe và ffprobe.exe dùng để cắt, gộp, chuyển đổi định dạng và lọc âm thanh |
+| [ic/] | Chứa icon ứng dụng logo.ico và biểu tượng các nền tảng youtube.png, facebook.png, tik-tok.png, instagram.png, pinterest.png |
 | `music/` | Thư mục tự động khởi tạo khi chạy app để lưu các file âm thanh (`.mp3`), phụ đề (`.srt`) và cấu hình `playlist.json` |
 
 ## ⚙️ Yêu cầu hệ thống
@@ -107,9 +107,9 @@ Khi đang xem Preview hoặc nghe nhạc trong tab Playlist, bạn có thể dù
 ## 🛠️ Xử lý sự cố thường gặp (Troubleshooting)
 
 * **Lỗi `OSError: Cannot find libmpv` hoặc không mở được giao diện**:
-  Kiểm tra xem file [`mpv-1.dll`](https://drive.google.com/file/d/1Xk12hjZIk9rVG_Rebqw8IwOTUJYouOdC/view?usp=drivesdk) đã nằm đúng trong cùng thư mục với [`main.py`](https://drive.google.com/file/d/1suGwO3SxKMKraF2L12w__B_ZJ4lWdvTt/view?usp=drivesdk) chưa, và đảm bảo bạn đang dùng Python 64-bit.
+  Kiểm tra xem file mpv-1.dll đã nằm đúng trong cùng thư mục với main.py chưa, và đảm bảo bạn đang dùng Python 64-bit.
 * **Thông báo `LỖI: Không tìm thấy thư mục FFmpeg!`**:
-  Đảm bảo thư mục [`bin/`](https://drive.google.com/drive/folders/12PBl8D62HrzQYowl8rSNth7Yy-VHAfBq) nằm cùng cấp với [`main.py`](https://drive.google.com/file/d/1suGwO3SxKMKraF2L12w__B_ZJ4lWdvTt/view?usp=drivesdk) và bên trong có file [`ffmpeg.exe`](https://drive.google.com/file/d/1bzbQu41FoYDBY_vep6ykd1tBXEd4MGca/view?usp=drivesdk).
+  Đảm bảo thư mục bin/ nằm cùng cấp với main.py và bên trong có file ffmpeg.exe.
 * **Tải phụ đề lần đầu mất nhiều thời gian ở mức 15%**:
   Trong lần đầu tiên sử dụng tính năng tạo phụ đề AI, [Faster-Whisper](https://github.com/SYSTRAN/faster-whisper) sẽ tự động tải mô hình `medium` (~1.5 GB) hoặc `large-v2` (~3 GB) từ Hugging Face về bộ nhớ đệm của máy. Các lần chạy tiếp theo sẽ nạp trực tiếp từ ổ cứng và diễn ra nhanh chóng.
 * **Không tải được một số video YouTube mới**:
