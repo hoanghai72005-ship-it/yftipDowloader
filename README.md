@@ -23,7 +23,7 @@
 | [`sub_rules.py`](https://github.com/hoanghai72005-ship-it/yftipDowloader/blob/main/sub_rules.py) | Từ điển quy tắc lọc câu rác (hallucination), từ nối bị treo cuối câu và bộ sửa lỗi cụm từ đồng âm tiếng Việt |
 | mpv-1.dll | Thư viện liên kết động `libmpv` cho Windows để nhúng trình phát video/audio trực tiếp vào giao diện |
 | [`bin/`](https://github.com/hoanghai72005-ship-it/yftipDowloader/tree/main/bin) | Chứa bộ công cụ ffmpeg.exe, ffplay.exe và ffprobe.exe dùng để cắt, gộp, chuyển đổi định dạng và lọc âm thanh |
-| [ic/] | Chứa icon ứng dụng logo.ico và biểu tượng các nền tảng youtube.png, facebook.png, tik-tok.png, instagram.png, pinterest.png |
+| ['ic/'](https://github.com/hoanghai72005-ship-it/yftipDowloader/tree/main/ic) | Chứa icon ứng dụng logo.ico và biểu tượng các nền tảng youtube.png, facebook.png, tik-tok.png, instagram.png, pinterest.png |
 | `music/` | Thư mục tự động khởi tạo khi chạy app để lưu các file âm thanh (`.mp3`), phụ đề (`.srt`) và cấu hình `playlist.json` |
 
 ## ⚙️ Yêu cầu hệ thống
